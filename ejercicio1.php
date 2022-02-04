@@ -24,7 +24,7 @@ if ($dia=="" || $hora=="") {
     echo "<p>A hora escollida é $hora.</p>";
     echo "<p>O día escollido é $dia.</p>";
     $horarioDaHoraEscollida = $horario[$hora];
-    echo "<p>Nese horario a clase é: </p>".$horarioDaHoraEscollida[$dia]."</p>";
+    echo "<p>Nese horario a clase é: ".$horarioDaHoraEscollida[$dia]."</p>";
 }else {
     echo "<p>O formato da hora ou do día non é correcto.</p>";
 }
