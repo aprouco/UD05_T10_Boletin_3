@@ -16,11 +16,17 @@ $horario = array (
 );
 
 $dia=isset($_REQUEST["dia"])?$_REQUEST ["dia"]:"";
+$hora=isset($_REQUEST["hora"])?$_REQUEST ["hora"]:"";
 
-if ($dia=="") {
-    echo "<p>Tes que escoller un día</p>";
-}else if ($dia<5 && $dia>=0) {
-    echo $horario['8:50 - 9:40'][$dia];
+if ($dia=="" || $hora=="") {
+    echo "<p>Tes que escoller un día e a hora.</p>";
+}else if ($dia<5 && $dia>=0 && $hora!="") {
+    echo "<p>A hora escollida é $hora.</p>";
+    echo "<p>O día escollido é $dia.</p>";
+    $horarioDaHoraEscollida = $horario[$hora];
+    echo "<p>Nese horario a clase é: </p>".$horarioDaHoraEscollida[$dia]."</p>";
+}else {
+    echo "<p>O formato da hora ou do día non é correcto.</p>";
 }
 
 ?>
