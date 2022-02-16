@@ -16,7 +16,6 @@
             $numeros = array($_REQUEST["num1"],$_REQUEST["num2"],$_REQUEST["num3"]);
             asort($numeros);
             foreach ($numeros as $clave => $valor) {
-                
             }
         ?>
     </form>
