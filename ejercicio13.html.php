@@ -13,14 +13,16 @@
         <p>Introduzca un número: <input type="text" name="num3"></p>
         <input type="submit" value="submit">
         <?php
-            $numeros = array($_REQUEST["num1"],$_REQUEST["num2"],$_REQUEST["num3"]);
+            $numeros = array();
+            $num1 = intval($_REQUEST["num1"]);
+            $num2 = intval($_REQUEST["num2"]);
+            $num3 = intval($_REQUEST["num3"]);
             if (!is_int($num1) || !is_int($num2) || !is_int($num3)) {
                 echo "<p>Introduce tres valores enteros</p>";
             } else {
-                asort($numeros);
-                foreach ($numeros as $clave => $valor) {
-                    echo $numeros;
-                }
+                array_push($numeros, $num1, $num2, $num3);
+                sort($numeros);
+                echo "<p>Números ordenados de menor a mayor: ".$numeros[0]." > ".$numeros[1]." > ".$numeros[2]."</p>";
             }
         ?>
     </form>
