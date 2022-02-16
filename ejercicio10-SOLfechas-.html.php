@@ -65,6 +65,7 @@
         <input type="submit" value="Enviar">
     </form>
     <?php
+    $horoscopo = "";
         if (!isset($_REQUEST["dia"]) || !isset($_REQUEST["mes"])) {
             echo "<p>Tes que escoller o día e o mes</p>";
         }else {
@@ -85,18 +86,20 @@
                 mktime(0,0,0,1,21) => "Escorpio",
                 mktime(0,0,0,1,22) => "Sagitario",
             );
-            $horoscopo = "";
 
             foreach ($calendarioHoroscopo as $marcaTempo => $signoHoroscopo) {
                 if ($dataConsultada < $marcaTempo && $horoscopo == "") {
                     $horoscopo = $signoHoroscopo;   
                 }
-                if ($horoscopo == ""){
-                    $horoscopo = "Capricornio";    
-                } 
             }
-        }
+            
+            if ($horoscopo == ""){
+                    $horoscopo = "Capricornio";    
+            
+            }
             echo "O teu horóscopo, según varias fontes consultadas é aproximadamente: ".$horoscopo;
+        }
+            
     ?>
 </body>
 </html>
