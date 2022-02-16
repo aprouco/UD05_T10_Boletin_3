@@ -14,9 +14,9 @@
         <input type="submit" value="submit">
         <?php
             $numeros = array($_REQUEST["num1"],$_REQUEST["num2"],$_REQUEST["num3"]);
-            asort($numeros, 1);
-            for($x = 0; $x < count($numeros); $x++) {
-            echo $numeros[$x];
+            asort($numeros);
+            foreach ($numeros as $clave => $valor) {
+                
             }
         ?>
     </form>
