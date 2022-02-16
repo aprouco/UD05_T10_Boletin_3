@@ -70,94 +70,32 @@
         }else {
             $mes = $_REQUEST["mes"];
             $dia = $_REQUEST["dia"];
+            $dataConsultada=mktime(0,0,0,intval($mes),intval($dia));
+            $calendarioHoroscopo = array(
+                mktime(0,0,0,1,20) => "Capricornio",
+                mktime(0,0,0,1,19) => "Acuario",
+                mktime(0,0,0,1,21) => "Piscis",
+                mktime(0,0,0,1,20) => "Aries",
+                mktime(0,0,0,1,22) => "Tauro",
+                mktime(0,0,0,1,22) => "Géminis",
+                mktime(0,0,0,1,23) => "Cáncer",
+                mktime(0,0,0,1,24) => "Leo",
+                mktime(0,0,0,1,23) => "Virgo",
+                mktime(0,0,0,1,23) => "Libro",
+                mktime(0,0,0,1,21) => "Escorpio",
+                mktime(0,0,0,1,22) => "Sagitario",
+            );
             $horoscopo = "";
-            switch ($mes) {
-                case '01':
-                    if($dia < 20){
-                        $horoscopo= "Capricornio";
-                    }else{
-                        $horoscopo= "Acuario";
-                    }
-                    break;
-                case '02':
-                    if($dia < 19){
-                        $horoscopo= "Acuario";
-                    }else{
-                        $horoscopo= "Piscis";
-                    }
-                    break;
-                case '03':
-                    if($dia < 21){
-                        $horoscopo= "Piscis";
-                    }else{
-                        $horoscopo= "Aries";
-                    }
-                    break;
-                case '04':
-                    if($dia < 20){
-                        $horoscopo= "Aries";
-                    }else{
-                        $horoscopo= "Tauro";
-                    }
-                    break;
-                case '05':
-                    if($dia < 22){
-                        $horoscopo= "Tauro";
-                    }else{
-                        $horoscopo= "Géminis";
-                    }
-                    break;
-                case '06':
-                    if($dia < 22){
-                        $horoscopo= "Géminis";
-                    }else{
-                        $horoscopo= "Cáncer";
-                    }
-                    break;
-                case '07':
-                    if($dia < 23){
-                        $horoscopo= "Cáncer";
-                    }else{
-                        $horoscopo= "Leo";
-                    }
-                    break;
-                case '08':
-                    if($dia < 24){
-                        $horoscopo= "Leo";
-                    }else{
-                        $horoscopo= "Virgo";
-                    }
-                    break;
-                case '09':
-                    if($dia < 23){
-                        $horoscopo= "Virgo";
-                    }else{
-                        $horoscopo= "Libra";
-                    }
-                    break;
-                case '10':
-                    if($dia < 23){
-                        $horoscopo= "Libra";
-                    }else{
-                        $horoscopo= "Escorpio";
-                    }
-                    break;
-                case '11':
-                    if($dia < 21){
-                        $horoscopo= "Escorpio";
-                    }else{
-                        $horoscopo= "Sagitario";
-                    }
-                    break;
-                case '12':
-                    if($dia < 22){
-                        $horoscopo= "Sagitario";
-                    }else{
-                        $horoscopo= "Capricornio";
-                    }
-                    break;
-                
+
+            foreach ($calendarioHoroscopo as $marcaTempo => $signoHoroscopo) {
+                if ($dataConsultada < $marcaTempo && $horoscopo == "") {
+                    $horoscopo = $signoHoroscopo;   
+                }
+                if ($horoscopo == "") {
+                    $horoscopo = "Capricornio";
+                }
             }
+
             echo "O teu horóscopo, según varias fontes consultadas é aproximadamente: ".$horoscopo;
         }
     ?>
