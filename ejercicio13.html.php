@@ -14,8 +14,13 @@
         <input type="submit" value="submit">
         <?php
             $numeros = array($_REQUEST["num1"],$_REQUEST["num2"],$_REQUEST["num3"]);
-            asort($numeros);
-            foreach ($numeros as $clave => $valor) {
+            if (!is_int($num1) || !is_int($num2) || !is_int($num3)) {
+                echo "<p>Introduce tres valores enteros</p>";
+            } else {
+                asort($numeros);
+                foreach ($numeros as $clave => $valor) {
+                    echo $numeros;
+                }
             }
         ?>
     </form>
