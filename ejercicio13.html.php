@@ -13,9 +13,8 @@
         <p>Introduzca un número: <input type="text" name="num3"></p>
         <input type="submit" value="submit">
         <?php
-            #$numeros = isset(array($_REQUEST['num1'],$_REQUEST['num2'],$_REQUEST['num3']));
-            $numeros= array(isset($_POST["num1"]),isset($_POST["num2"]),isset($_POST["num3"]));
-            arsort($numeros);
+            $numeros = array(isset($_POST["num1"]),isset($_POST["num2"]),isset($_POST["num3"]));
+            sort($numeros);
             for($x = 0; $x < count($numeros); $x++) {
             echo $numeros[$x];
             }
