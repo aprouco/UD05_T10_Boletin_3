@@ -13,11 +13,11 @@
         <br>
         <p>
             <?php 
-                $num=$_REQUEST["num"];
+                $num=intval($_REQUEST["num"]);
                 $dig=str_split($num);
-                if ($dig <=5) {
-                    echo $dig[0];
-                }else {
+                if (strlen($num) <=5) {
+                    echo "La primera cifra del número es ".$dig[0];
+                }else{
                     echo "El número de cifras debe ser menor o igual a 5";
                 }
             ?>
