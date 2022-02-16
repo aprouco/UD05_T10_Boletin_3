@@ -65,7 +65,6 @@
         <input type="submit" value="Enviar">
     </form>
     <?php
-    $horoscopo = "";
         if (!isset($_REQUEST["dia"]) || !isset($_REQUEST["mes"])) {
             echo "<p>Tes que escoller o día e o mes</p>";
         }else {
@@ -74,19 +73,20 @@
             $dataConsultada=mktime(0,0,0,intval($mes),intval($dia));
             $calendarioHoroscopo = array(
                 mktime(0,0,0,1,20) => "Capricornio",
-                mktime(0,0,0,1,19) => "Acuario",
-                mktime(0,0,0,1,21) => "Piscis",
-                mktime(0,0,0,1,20) => "Aries",
-                mktime(0,0,0,1,22) => "Tauro",
-                mktime(0,0,0,1,22) => "Géminis",
-                mktime(0,0,0,1,23) => "Cáncer",
-                mktime(0,0,0,1,24) => "Leo",
-                mktime(0,0,0,1,23) => "Virgo",
-                mktime(0,0,0,1,23) => "Libro",
-                mktime(0,0,0,1,21) => "Escorpio",
-                mktime(0,0,0,1,22) => "Sagitario",
+                mktime(0,0,0,2,19) => "Acuario",
+                mktime(0,0,0,3,21) => "Piscis",
+                mktime(0,0,0,4,20) => "Aries",
+                mktime(0,0,0,5,22) => "Tauro",
+                mktime(0,0,0,6,22) => "Géminis",
+                mktime(0,0,0,7,23) => "Cáncer",
+                mktime(0,0,0,8,24) => "Leo",
+                mktime(0,0,0,9,23) => "Virgo",
+                mktime(0,0,0,10,23) => "Libro",
+                mktime(0,0,0,11,21) => "Escorpio",
+                mktime(0,0,0,12,22) => "Sagitario",
             );
-
+            
+            $horoscopo = "";
             foreach ($calendarioHoroscopo as $marcaTempo => $signoHoroscopo) {
                 if ($dataConsultada < $marcaTempo && $horoscopo == "") {
                     $horoscopo = $signoHoroscopo;   
@@ -95,11 +95,9 @@
             
             if ($horoscopo == ""){
                     $horoscopo = "Capricornio";    
-            
             }
             echo "O teu horóscopo, según varias fontes consultadas é aproximadamente: ".$horoscopo;
         }
-            
     ?>
 </body>
 </html>
