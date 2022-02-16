@@ -8,6 +8,9 @@
 </head>
 <body>
     <form action=<?php echo $_SERVER['PHP_SELF'] ?> method="post">
+        <label for="intentos">Intentos</label>
+        <input type="hidden" name="intentos" value="<?php echo (isset($_REQUEST['intentos'])?$_REQUEST['intentos']+1:'1')?>"/>
+        <br>
         <label for="dia">Día: </label>
         <input type="number" min="1" max="31" name="dia" value="<?php echo isset($_REQUEST['dia'])?$_REQUEST['dia']:''?>">
         <br><label for="dia">Mes: </label>
