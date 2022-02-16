@@ -13,7 +13,7 @@
         <br>
         <p>
             <?php 
-                $num=$_REQUEST["num"];
+                $num=intval($_REQUEST["num"]);
                 $dig=str_split($num);
                 echo end($dig);
             ?>
