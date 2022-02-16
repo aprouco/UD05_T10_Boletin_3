@@ -91,13 +91,12 @@
                 if ($dataConsultada < $marcaTempo && $horoscopo == "") {
                     $horoscopo = $signoHoroscopo;   
                 }
-                if ($horoscopo == "") {
-                    $horoscopo = "Capricornio";
-                }
+                if ($horoscopo == ""){
+                    $horoscopo = "Capricornio";    
+                } 
             }
-
-            echo "O teu horóscopo, según varias fontes consultadas é aproximadamente: ".$horoscopo;
         }
+            echo "O teu horóscopo, según varias fontes consultadas é aproximadamente: ".$horoscopo;
     ?>
 </body>
 </html>
