@@ -14,7 +14,7 @@
         <input type="submit" value="submit">
         <?php
             $numeros = array(isset($_POST["num1"]),isset($_POST["num2"]),isset($_POST["num3"]));
-            sort($numeros,4);
+            sort($numeros,SORT_NUMERIC);
             for($x = 0; $x < count($numeros); $x++) {
             echo $numeros[$x];
             }
