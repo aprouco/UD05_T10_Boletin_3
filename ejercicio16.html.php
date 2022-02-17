@@ -13,20 +13,9 @@
         <br>
         <p>
             <?php 
-                if (!isset($_POST["num"])) {
-                    echo "<p>Tes que introducir un número.</p>";
-                }else if (filter_var($_POST['num'],FILTER_VALIDATE_INT)){
-                    echo "<p>Tes que introducir un número.</p>";
-                }else{
-
-                }
-
-
-
                 $num=intval($_REQUEST["num"]);
                 $dig=str_split($num);
                 echo end($dig);
-                
             ?>
         </p>
     </form>
